@@ -4,8 +4,8 @@
 var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item the given array.
 
-var first = function(arr) {
-    return arr[0];
+var first = function(arrName) {
+    return arrName[0];
 };
 
 console.log(first(arr));
@@ -19,8 +19,8 @@ var arr = [40,50,60];
 //Create a function named 'last' that is given 'arr' as the argument and returns the last item the given array.
 
 
-var last = function(arr) {
-    return arr.slice(-1)[0];
+var last = function(arrName) {
+    return arrName.slice(-1)[0];
 };
 
 console.log(last(arr));
@@ -31,9 +31,9 @@ console.log(last(arr));
 var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
-var looper = function (family) {
-    for (i in family) {
-        console.log(family[i]);
+var looper = function (arrName) {
+    for (i in arrName) {
+        console.log(arrName[i]);
     }
 };
 
@@ -47,9 +47,9 @@ looper(family);
 var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
-var reversedLooper = function(letters) {
-    for (var i = letters.length - 1 ; i >= 0; i--) {
-        console.log(letters[i]);
+var reversedLooper = function(arrName) {
+    for (var i = arrName.length - 1 ; i >= 0; i--) {
+        console.log(arrName[i]);
     }
 };
 
@@ -61,13 +61,13 @@ reversedLooper(letters);
 var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
-var evenFinder = function(arr) {
-    for (i = arr.length -1; i >= 0; i--) {
-        if (arr[i] % 2 != 0) {
-            arr.splice(i, 1);
+var evenFinder = function(arrName) {
+    for (i = arrName.length -1; i >= 0; i--) {
+        if (arrName[i] % 2 != 0) {
+            arrName.splice(i, 1);
         }
     }
-    return arr;
+    return arrName;
 };
 
 console.log(evenFinder(nums));
@@ -178,10 +178,15 @@ console.log(myGroceryList);
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-var makerArray = [];
-
-var maker = function(addArray) {
+var maker = function(start, end) {
+    var newArr = [];
+    for (var i = start; i < end + 1; i++) {
+        newArr.push(i);
+    }
+    return newArr;
 };
+
+console.log(maker(1, 215));
 
 
 //Next Problem
@@ -219,10 +224,13 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number to both arr1 and arr2.
 //Write a function that is given arr1 and arr2 is it's only arguments. Return the array which is longest.
 
+console.log(arr1);
+console.log(arr2);
+
 var whichBigger = function(x, y) {
     if (x.length > y.length) {
-        return x;
-    } else return y;
+        return [x];
+    } else return [y];
 };
 
 //console.log(arr1);
@@ -232,14 +240,14 @@ console.log(whichBigger(arr1, arr2) + ' ' + '<-- is the bigger array');
 
 
 
+
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
 */
 
 var both = function(x, y) {
-    var combinedArr = [[x] + [y]];
-    return combinedArr;
+    return [[x] + [y]];
 };
 
 console.log(both(arr1, arr2) + ' ' + '<-- is the combined array');

@@ -230,7 +230,9 @@ console.log(arr2);
 var whichBigger = function(x, y) {
     if (x.length > y.length) {
         return [x];
-    } else return [y];
+    } else {
+        return [y];
+    }
 };
 
 //console.log(arr1);
@@ -240,14 +242,13 @@ console.log(whichBigger(arr1, arr2) + ' ' + '<-- is the bigger array');
 
 
 
-
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
 */
 
 var both = function(x, y) {
-    return [[x] + [y]];
+    return x.concat(y);
 };
 
 console.log(both(arr1, arr2) + ' ' + '<-- is the combined array');
@@ -311,6 +312,8 @@ for (i = 0; i < devMountainEmployees.length; i++) {
         i--;
     }
 }
+
+// Showing that Cahlan has been removed
 for (i = 0; i < devMountainEmployees.length; i++) {
     console.log(devMountainEmployees[i].name);
 }
@@ -380,7 +383,7 @@ var user3 = {
 };
 
 users.push(user1, user2, user3);
-
+console.log('Before:');
 console.log(users);
 
 
@@ -398,7 +401,7 @@ for (i = 0; i < users.length; i++) {
         i--;
      }
 }
-
+console.log('After:');
 console.log(users);
 
 //The activity we just did is very much how data works in 'the real world'.

@@ -32,7 +32,7 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
 var looper = function (arrName) {
-    for (i in arrName) {
+    for (var i in arrName) {
         console.log(arrName[i]);
     }
 };
@@ -106,8 +106,9 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30, and an array full or numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
 var finder = function(randNum, numArray) {
-    for (i in numArray) {
-        if (numArray[i] === randNum()) {
+    var randomNum = getRandomArbitrary();
+    for (var i in numArray) {
+        if (numArray[i] === randomNum()) {
             return true;
         } else {
             return false;
@@ -115,7 +116,7 @@ var finder = function(randNum, numArray) {
     }
 };
 
-console.log(finder(getRandomArbitrary, numbers));
+console.log(finder(numbers));
 
 
 //Next problem
@@ -197,7 +198,7 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
 var addTen = function(paramNum) {
-    for (i in paramNum) {
+    for (var i in paramNum) {
         paramNum[i] = Number(paramNum[i]) + 10;
     }
     return paramNum;
